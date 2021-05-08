@@ -4,7 +4,6 @@ import {handleStorage} from '@/hooks/handleStorage'
 import router from '@/router'
 import {  message } from "ant-design-vue";
 
-
 // 环境的切换
 if (process.env.NODE_ENV === 'development') {
   axios.defaults.baseURL = ''
@@ -89,6 +88,8 @@ axios.interceptors.response.use(
       router.replace({path:'/'})
       return Promise.resolve(response)
     }
+    let {msg} = response.data
+    message.error(msg)
     return Promise.resolve(response)
     
   }

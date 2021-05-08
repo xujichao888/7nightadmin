@@ -14,10 +14,10 @@
     </template>
     <template #handle="{ record }">
       <a-space>
-        <a-button type="primary" @click="moveService(record)"
+        <a-button type="primary" size="small" @click="moveService(record)"
           >迁移客服</a-button
         >
-        <a-button type="danger" @click="deleteService(record)"
+        <a-button type="danger" size="small" @click="deleteService(record)"
           >删除客服</a-button
         >
       </a-space>

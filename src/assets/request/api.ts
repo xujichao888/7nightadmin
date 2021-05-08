@@ -5,6 +5,7 @@ import {
     IfriendLog,
     Ifrozen,
     Igetimg,
+    Iinvitation,
     IloginParams, 
     Iupdateuser,
     IuserInfotage,
@@ -24,3 +25,4 @@ export const http_setfriendcount = (parmas: Ifriendcount) => put<Ifriendcount>('
 export const http_friendlog = (parmas: IfriendLog) => get<IfriendLog>('/api/admin/friendlog', parmas) //好友次数日志
 export const http_propslogs = (parmas: Icumstomer) => get<Icumstomer>('/api/admin/propslogs', parmas) //获得充值道具日志
 export const http_servicelog = (parmas: Icumstomer) => get<Icumstomer>('/api/admin/servicelist', parmas) //获得客服列表
+export const http_invitation = (parmas: Iinvitation) => get<Iinvitation>('/api/admin/invitation', parmas) //获得邀约列表

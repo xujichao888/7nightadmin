@@ -74,6 +74,13 @@ export interface Ifrozen{
 export interface Icumstomer{
   userid?:string
 }
+export interface Iinvitation{
+  page:number,
+  rows:number,
+  type:number,
+  tagid?:number,
+  userid?:number,
+}
 export interface IuserInfotage{
   userid:string
 }
