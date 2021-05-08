@@ -253,7 +253,9 @@ export default defineComponent({
       obj: IuserList
     ): Promise<void> => {
       loading.value = true;
+      
       let result = await httpuserlist(query, obj);
+      console.log(result)
       let {
         data: { count, data },
       } = result;
