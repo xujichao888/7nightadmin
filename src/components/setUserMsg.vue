@@ -1,5 +1,6 @@
 <template>
   <div class="set-user">
+ 
     <a-form ref="formRef" :rules="rules" :model="formState">
       <a-form-item name="avatarimg" label="用户头像">
         <div class="avatar-boxs">

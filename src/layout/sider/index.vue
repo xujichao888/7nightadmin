@@ -28,16 +28,11 @@
         <span>客服管理</span>
       </a-menu-item>
 
-      <a-sub-menu key="content">
-        <template v-slot:title>
+      <a-menu-item key="/home/content">
           <DatabaseOutlined />
           <span>内容管理</span>
-        </template>
-        <a-menu-item key="1"> Option 5 </a-menu-item>
-        <a-menu-item key="2"> Option 6 </a-menu-item>
-        <a-menu-item key="3"> Option 7 </a-menu-item>
-        <a-menu-item key="4"> Option 8 </a-menu-item>
-      </a-sub-menu>
+     
+      </a-menu-item>
 
       <a-menu-item key="report">
         <IdcardOutlined />
@@ -128,15 +123,7 @@ export default defineComponent({
     };
     const handleSelect = (item:any)=>{
        let {key} = item;
-       console.log(key)
-      switch(key){
-        case '/home/vip':
-          router.push({path:'/home/vip'})
-          break;
-        case '/home/customer':
-          router.push({path:'/home/customer'})
-          break;
-      }
+        router.push({path:key})
     }
     return {
       collapsed,

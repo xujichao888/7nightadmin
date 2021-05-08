@@ -13,9 +13,19 @@ export function handleStorage() {
     const removeStoage = (id: string): void => {
         localStorage.removeItem(id)
     }
+    const saveLoginTime = (time:number):void=>{
+        console.log(time)
+        localStorage.setItem('loginTime', time+'')
+    }
+    const getLoginTime = ():any=>{
+        let result: string | null = localStorage.getItem('loginTime')
+        return result == null ? null : JSON.parse(result as string)
+    }
     return {
         getStorage,
         setStorage,
-        removeStoage
+        removeStoage,
+        saveLoginTime,
+        getLoginTime,
     }
 }

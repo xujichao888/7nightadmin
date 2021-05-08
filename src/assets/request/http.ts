@@ -21,9 +21,12 @@ axios.interceptors.request.use(
     // 即使本地存在token，也有可能token是过期的，所以在响应拦截器中要对返回状态进行判断4
     console.log(config)
     let {getStorage}=handleStorage();
-    
-    const {token:{token}}:any = getStorage('token');
-    
+    let storage = getStorage('token')
+    if(getStorage('token')==null){
+      return config
+    }
+    const {token:{token}}:any = storage;
+    console.log(token)
     if(token!=null){
       config.headers.token = `${token}`;
       config.headers['content-type'] = 'application/x-www-form-urlencoded;charset=UTF-8';

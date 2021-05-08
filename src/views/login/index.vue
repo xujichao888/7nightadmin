@@ -79,7 +79,7 @@ export default defineComponent({
       },
     });
     const { saveToken } = handleToken();
-    const { setStorage } = handleStorage();
+    const { setStorage,saveLoginTime} = handleStorage();
     const router:Router = useRouter()
     const submit = async (): Promise<void> => {
       //submit login message
@@ -101,6 +101,8 @@ export default defineComponent({
         message.success("登录成功");
         setStorage("token", data);
         saveToken(data as string);
+        let timecurrent:number =Math.floor((new Date().getTime())/1000)
+        saveLoginTime(timecurrent);
         router.push('/home')
       } else {
         message.info(`${msg},请核对` || "登录失败");
