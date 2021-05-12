@@ -5,7 +5,7 @@
           padding: '24px',
           background: '#fff',
           minHeight: '280px',
-          overflow: 'auto'
+          overflow: 'auto',
         }"
       >
         <router-view/>
@@ -13,11 +13,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { computed, defineComponent, onMounted } from "vue";
 import {Layout } from "ant-design-vue";
+import {loginRTM,logoutRTM,sendTextMsg} from '@/hooks/handleRTM'
+import { Store, useStore } from "vuex";
+
 export default defineComponent({
     components:{
         [Layout.Content.name]:Layout.Content
+    },
+    setup(){
+      let store:Store<any> = useStore()
+      let ownmsg = computed(()=>store.state.ownmsg)
+      console.log('ownmsg',ownmsg.value)
+      loginRTM(ownmsg.value.id.toString())
+      // setTimeout(()=>{
+      //     sendTextMsg('11780',{}).then(res=>{
+      //       console.log(res)
+      //     })
+      // },5000)
+  
     }
 })
 </script>

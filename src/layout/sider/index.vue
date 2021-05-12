@@ -34,7 +34,7 @@
      
       </a-menu-item>
 
-      <a-menu-item key="report">
+      <a-menu-item key="/home/report">
         <IdcardOutlined />
         <span>举报管理</span>
       </a-menu-item>
@@ -64,6 +64,10 @@
         <a-menu-item key="12">权限列表 </a-menu-item>
         <a-menu-item key="13"> 新建管理员 </a-menu-item>
       </a-sub-menu>
+        <a-menu-item key="/home/worktable">
+        <SolutionOutlined />
+        <span>工作台</span>
+      </a-menu-item>
     </a-menu>
   </a-layout-sider>
 </template>
@@ -123,6 +127,7 @@ export default defineComponent({
     };
     const handleSelect = (item:any)=>{
        let {key} = item;
+       console.log(key)
         router.push({path:key})
     }
     return {

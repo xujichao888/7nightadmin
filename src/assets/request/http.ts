@@ -23,6 +23,9 @@ axios.interceptors.request.use(
 
     let {getStorage}=handleStorage();
     let storage = getStorage('token')
+    if(config.url=="/api/admin/adminlogin"){
+      return config
+    }
     if(storage==null){
       return config
     }
@@ -52,7 +55,6 @@ function refreshToken () {
   let refreshToken = getLocalToken()
   return axios.get(`/api/admin/refreshtoken?refreshToken=${refreshToken}`).then((res:any)=>res.data)
 }
-
 
 // 响应拦截器
 let isRefresh:boolean = false; //是否正在刷新token

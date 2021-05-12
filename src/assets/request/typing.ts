@@ -81,6 +81,12 @@ export interface Iinvitation{
   tagid?:number,
   userid?:number,
 }
+export interface Ireport{
+  page:number;
+  rows:number;
+  type:number;
+  status:number;
+}
 export interface IuserInfotage{
   userid:string
 }

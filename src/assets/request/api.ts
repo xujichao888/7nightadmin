@@ -7,6 +7,7 @@ import {
     Igetimg,
     Iinvitation,
     IloginParams, 
+    Ireport, 
     Iupdateuser,
     IuserInfotage,
     IuserList
@@ -26,3 +27,6 @@ export const http_friendlog = (parmas: IfriendLog) => get<IfriendLog>('/api/admi
 export const http_propslogs = (parmas: Icumstomer) => get<Icumstomer>('/api/admin/propslogs', parmas) //获得充值道具日志
 export const http_servicelog = (parmas: Icumstomer) => get<Icumstomer>('/api/admin/servicelist', parmas) //获得客服列表
 export const http_invitation = (parmas: Iinvitation) => get<Iinvitation>('/api/admin/invitation', parmas) //获得邀约列表
+export const http_report = (parmas: Ireport) => get<Ireport>('/api/admin/report', parmas) //获得邀约列表/admin/report
+
+export const http_getRTMtoken = ()=>get('/api/agora/getrtmtoken',{})  //获得rtm的token

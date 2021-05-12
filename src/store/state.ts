@@ -5,5 +5,7 @@ export default<Istate>{
     id:'',
     ownmsg:{},
     clickMsg:{},
-    userLists:[]
+    userLists:[],
+    client:null,
+    isLogined:false,
 }

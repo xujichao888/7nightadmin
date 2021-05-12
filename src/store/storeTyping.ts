@@ -34,7 +34,9 @@ export interface Istate{
     id:string
     ownmsg:Iownmsg
     clickMsg:IclickMsg
-    userLists:any
+    userLists:any,
+    client:any,
+    isLogined:boolean,
 }
 
 export interface Iproperty{

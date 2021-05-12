@@ -1,4 +1,4 @@
-import { SAVE_USERLIST, SETCLICK_ID, SET_CLICKMSG, SET_COLLAPSED, SET_LISTPROPERTY, SET_OWNMSG } from "@/store/actionTypes";
+import { SAVE_RTMTOKEN, SAVE_USERLIST, SETCLICK_ID, SET_CLICKMSG, SET_COLLAPSED, SET_LISTPROPERTY, SET_OWNMSG } from "@/store/actionTypes";
 import { IclickMsg, Iownmsg } from "@/store/storeTyping";
 import { Store, useStore } from "vuex";
 
@@ -7,7 +7,8 @@ export interface IhandleStore {
     setOwnMsg:(msg:Iownmsg)=>void;
     setClickMsg:(msg:IclickMsg)=>void;
     saveUserList:(list:IclickMsg[])=>void;
-    setUserListPropertyByType:(type:string,val:any)=>void
+    setUserListPropertyByType:(type:string,val:any)=>void;
+    saveRTMclient:(client:any)=>void
 }
 
 export function handleStores():IhandleStore{
@@ -28,11 +29,15 @@ export function handleStores():IhandleStore{
     function setUserListPropertyByType(type:string,val:any):void{ //设置渲染数组中的某个属性
         store.dispatch(SET_LISTPROPERTY,{type,val})
     }
+    function saveRTMclient(client:any):void{ //保存client
+        store.dispatch(SAVE_RTMTOKEN,client)
+    }
     return {
         setCollapsed,
         setOwnMsg,
         setClickMsg,
         saveUserList,
-        setUserListPropertyByType
+        setUserListPropertyByType,
+        saveRTMclient
     }
 }

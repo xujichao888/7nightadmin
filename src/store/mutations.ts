@@ -1,4 +1,4 @@
-import { SAVE_TOKEN, SAVE_USERLIST, SETCLICK_ID, SET_CLICKMSG, SET_COLLAPSED, SET_LISTPROPERTY, SET_OWNMSG } from "./actionTypes";
+import { SAVE_RTMTOKEN, SAVE_TOKEN, SAVE_USERLIST, SETCLICK_ID, SET_CLICKMSG, SET_COLLAPSED, SET_LISTPROPERTY, SET_OWNMSG } from "./actionTypes";
 import { IclickMsg, Iownmsg, Iproperty, Istate } from "./storeTyping";
 
 export default{
@@ -24,6 +24,10 @@ export default{
     },
     [SAVE_USERLIST](state:Istate,list:IclickMsg[]){ //保存用户渲染数组
         state.userLists = list;
+        console.log(state)
+    },
+    [SAVE_RTMTOKEN](state:Istate,client:any){ //保存RTMclient
+        state.client = client;
         console.log(state)
     },
     [SET_LISTPROPERTY](state:Istate,obj:Iproperty){

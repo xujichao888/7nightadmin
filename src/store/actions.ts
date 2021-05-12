@@ -1,5 +1,5 @@
 import { Commit } from "vuex";
-import { SAVE_TOKEN, SAVE_USERLIST, SETCLICK_ID, SET_CLICKMSG, SET_COLLAPSED, SET_LISTPROPERTY, SET_OWNMSG } from "./actionTypes";
+import { SAVE_RTMTOKEN, SAVE_TOKEN, SAVE_USERLIST, SETCLICK_ID, SET_CLICKMSG, SET_COLLAPSED, SET_LISTPROPERTY, SET_OWNMSG } from "./actionTypes";
 import { IclickMsg, Iownmsg, Iproperty, Istate } from "./storeTyping";
 interface Icommit{
     commit:Commit,
@@ -27,6 +27,8 @@ export default{
     },
     [SET_LISTPROPERTY]({commit}:Icommit,obj:Iproperty){
         commit(SET_LISTPROPERTY,obj)
-    }
-    
+    },
+    [SAVE_RTMTOKEN]({commit}:Icommit,client:any){
+        commit(SAVE_RTMTOKEN,client)
+    },
 }
